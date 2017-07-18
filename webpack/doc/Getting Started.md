@@ -73,7 +73,9 @@ document.body.appendChild(component());
 | |____bundle.js
 ```
 看到这个目录的时候，你应该就明白了，我们现在的目标就是把index.js 跟 lodash.js 两个文件打包成 bundle.js ； 然后通过 index.html 引入，让浏览器加载
+
 ***重点来了***
+
 要在 index.js 文件里打包 lodash 依赖包， 我们需要在本地安装 library.
 
 ```
