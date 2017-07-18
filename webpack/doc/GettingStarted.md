@@ -3,6 +3,8 @@
 
 以前的我们，很单纯，没有模块，没有组件，**没有webpack**，只有简单的js引入
 
+[如果对基本概念没有理解的，可以看过来](https://github.com/AngeLeeGeek/webs/blob/master/webpack/redme.md)
+
 目录是这样的
 
 ```
