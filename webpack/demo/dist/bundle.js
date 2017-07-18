@@ -77,7 +77,7 @@ function component() {
   var element = document.createElement('div');
 
   // Lodash（目前通过一个 script 脚本引入）对于执行这一行是必需的
-  element.innerHTML = Object(__WEBPACK_IMPORTED_MODULE_0_lodash__["join"])(['Hello', 'webpack'], ' ');
+  element.innerHTML = __WEBPACK_IMPORTED_MODULE_0_lodash___default.a.join(['Hello', 'webpack'], ' ');
 
   return element;
 }

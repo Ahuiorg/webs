@@ -1,4 +1,4 @@
-# 起步
+# webapck 修炼之路 -- 起步
 ## 别说话，看栗子
 
 以前的我们，很单纯，没有模块，没有组件，**没有webpack**，只有简单的js引入
@@ -60,6 +60,7 @@ document.body.appendChild(component());
 这个时候，我们为了让我们的目录更清晰，我们再加一个文件夹dist（distribution的缩写）；让我们更深刻的了解一下src跟dist目录
 
 > '/src': 源代码，用于书写跟编辑代码
+
 > '/dist': '分发'代码，是构建过程产生的代码最小化和优化后的“输出”目录，最终将在浏览器中加载
 
 看！！！新目录
@@ -122,5 +123,94 @@ webpack ./src/index.js ./dist/bundle.js
 </html>
 ```
 在浏览器里打开index.html, 看到 Hello webpack;  心里美美的 ^~^
+
+## 使用一个配置文件
+仔细体会了刚才的整个流程的同学应该发现了一个问题，就是我们写CLI的时候，如果我们每添加一个新文件 都需要我们这样去写一条CLI的话，那肯定是有点受不了的，下面让我们在项目里添加一个 webpack 的配置文件 webpack.config.js 来配置我们的打包流程
+
+首先，还是项目目录
+
+```
+|____index.html
+|____package.json
+|____webpack.config.js
+|____src
+| |____index.js
+|____dist
+| |____bundle.js
+```
+webpack.config.js
+
+```
+var path = require('path');
+
+module.exports = {
+    entry: './src/index.js',
+    output: {
+        filename: 'bundle.js',
+        path: path.resolve(__dirname, 'dist')
+    }
+};
+```
+里边各个方法跟属性有都是些什么意义，心急的同学们先别急，后边自会讲到。
+
+然后再运行CLI
+
+```
+webpack --config webpack.config.js
+```
+
+```
+➜  demo git:(master) ✗ webpack --config webpack.config.js
+Hash: 543ef1bd6cd54d0ccd6c
+Version: webpack 3.3.0
+Time: 440ms
+    Asset    Size  Chunks                    Chunk Names
+bundle.js  544 kB       0  [emitted]  [big]  main
+   [0] ./src/index.js 257 bytes {0} [built]
+   [2] (webpack)/buildin/global.js 509 bytes {0} [built]
+   [3] (webpack)/buildin/module.js 517 bytes {0} [built]
+    + 1 hidden module
+```
+效果一样，得到一个打包后的 bundle.js 文件
+
+## NPM脚本 （NPM Script）
+> 牛逼的人总是不甘于现状
+
+有的同学就会发现用CLI这种方式来运行本地的 webpack 会不方便，于是，他就会在 package.json 里边添加一个 npm 脚本来执行刚才的CLI 
+
+package.json
+
+```
+{
+    ...
+    "scripts": {
+        "build": "webpack"
+      },
+    ...
+}
+```
+然后，可以很自豪的运行下边命令
+
+```
+npm run build
+```
+
+```
+➜  demo git:(master) ✗ npm run build
+
+> demo@1.0.0 build /Users/XXX/webpack/demo
+> webpack
+
+Hash: 543ef1bd6cd54d0ccd6c
+Version: webpack 3.3.0
+Time: 427ms
+    Asset    Size  Chunks                    Chunk Names
+bundle.js  544 kB       0  [emitted]  [big]  main
+   [0] ./src/index.js 257 bytes {0} [built]
+   [2] (webpack)/buildin/global.js 509 bytes {0} [built]
+   [3] (webpack)/buildin/module.js 517 bytes {0} [built]
+    + 1 hidden module
+```
+
 
 
