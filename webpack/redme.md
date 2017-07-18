@@ -2,10 +2,10 @@
 ## 安装
 ```
 npm install --save-dev webpack  // 开发目录
-npm install -g webpack          // 全局
+npm install -g webpack          // 全局安装
 ```
-## 起步
-### 概念
+
+## 概念
 > webpack是一个现代JavaScript应用程序打包器。当webpack处理应用程序时，会递归地构建一个依赖关系图，其中包含应用程序需要的每个模块，然后将这边模块打包成少量的bundle - 通常只有一个，由浏览器加载。
 > 有四个核心概念：入口（entry）、出口（output）、loader、插件（plugins）
 
