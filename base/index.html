@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>bese demo</title>
+	<style>
+		.span-marging {
+			color: #0ff;
+			padding: 50px;
+			margin: 50px;
+		}
+		.wrap {
+			width: 100%;
+			position: relative;
+			background: #f0f;
+			display: inline-block;
+		}
+		.wrap:after {
+			content: '';
+			margin-top: 100%;
+			display: block;
+		}
+		.content {
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background: #ccc;
+		}
+		.box {
+			width: 100px;
+		}
+		.main {
+			margin-top: 20%;
+		}
+	</style>
+</head>
+	<h3>hello world</h3>
+	<span class="span-marging">这是一个行内标签</span>
+	<span class="span-marging">这是一个行内标签</span>
+	<div>这是一个块级标签</div>
+
+	<div class="wrap">
+		<div class="content">
+			ppppppp
+		</div>
+	</div>
+
+
+	<div class="box">
+		<div class="main">
+			这是内容
+		</div>
+	</div>
+<body>
+<script src='./js/index.js'></script>
+</body>
+</html>

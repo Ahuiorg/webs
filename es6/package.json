@@ -1,0 +1,22 @@
+{
+  "name": "es6",
+  "version": "1.0.0",
+  "description": "es6 study",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "AngeLee",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "webpack": "^3.4.1"
+  },
+  "keywords": [
+    "es6"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "ahui"
+  }
+}
